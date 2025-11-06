@@ -1,0 +1,27 @@
+<app-nav />
+<div class="flex justify-center my-10" >
+  <div class="flex flex-col gap-6 justify-center w-[350px] p-6 border border-gray-300 rounded-lg shadow-md">
+    <h2 class="text-3xl font-bold text-melanzane-900" >Registro</h2>
+    <form [formGroup]="signUpForm" class="flex w-full flex-col gap-6" (ngSubmit)="onSubmit()" >
+      <app-input
+        inputPlaceholder="Ej. Pedro"
+        label="Nombre"
+        [control]="signUpForm.controls.name"
+      />
+      <app-input
+        inputPlaceholder="example@example.com"
+        label="Correo Electrónico"
+        [control]="signUpForm.controls.email"
+      />
+      <app-input
+        inputPlaceholder="Escriba su contraseña"
+        label="Contraseña"
+        [control]="signUpForm.controls.password"
+        inputType="password"
+        legend="La contraseña debe ser mínimo 8 carácteres y debe contener al menos una minúscula, una mayúscula y un número."
+      />
+      <app-button buttonText="Registrar" className="w-full " buttonType="submit" [isDisabled]="!signUpForm.valid" />
+    </form>
+  </div>
+</div>
+<app-footer />

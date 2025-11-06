@@ -1,0 +1,21 @@
+<app-nav />
+<div class="flex justify-center my-[3.35rem]" >
+  <div class="flex flex-col gap-6 justify-center w-[350px] p-6 border border-gray-300 rounded-lg shadow-md">
+    <h2 class="text-3xl font-bold text-melanzane-900" >Inicio de Sesión</h2>
+    <form [formGroup]="loginForm" class="flex w-full flex-col gap-6" (ngSubmit)="onSumbit()" >
+      <app-input
+        inputPlaceholder="example@example.com"
+        label="Correo Electrónico"
+        [control]="loginForm.controls.email"
+      />
+      <app-input
+        inputPlaceholder="Escriba su contraseña"
+        label="Contraseña"
+        [control]="loginForm.controls.password"
+        inputType="password"
+      />
+      <app-button buttonText="Iniciar Sesión" className="w-full " buttonType="submit" [isDisabled]="!loginForm.valid" />
+    </form>
+  </div>
+</div>
+<app-footer />

@@ -1,0 +1,3 @@
+<button class="bg-marshland-900 hover:bg-marshland-900/95 py-1.5 px-2 rounded-lg text-white transition-all duration-200" [ngClass]="[isDisabled() ? 'cursor-not-allowed !bg-gray-500' : 'cursor-pointer', className()]" [type]="buttonType()" [disabled]="isDisabled()" (click)="handleClickButton.emit()" >
+    {{ buttonText() }}
+</button>
